@@ -1,0 +1,228 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url('https://www.xtrafondos.com/wallpapers/habitacion-lofi-8943.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: 60px;
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+    padding-top: 50px;
+    z-index: 2;
+    max-width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.nav-menu li a:hover {
+    background-color: #444;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 60px; /* Espacio para el logo que se superpone */
+}
+
+.menu {
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.menu-item {
+    border-bottom: 1px solid #555;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.menu-title .producto {
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.menu-title .precio {
+    font-weight: bold;
+    font-size: 14px;
+    color: #ad1774;
+    font-family: 'Courier New', monospace;
+}
+
+.menu-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    padding: 0 15px;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: start;
+    padding: 15px 0;
+}
+
+.ingredients {
+    flex: 1;
+}
+
+.ingredients ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+ /* Contenedor de la imagen responsiva */
+ .coffee-image-container {
+    width: 150px; /* Ancho fijo del contenedor */
+    flex-shrink: 0; /* Evita que el contenedor se encoja */
+}
+
+/* Imagen responsiva */
+.coffee-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Mantiene proporción cuadrada */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Clases específicas para cada tipo de café */
+.coffee-image.espresso {
+    background-image: 
+    url('https://static.wikia.nocookie.net/coffeetalk/images/a/ad/Espresso.png/revision/latest?cb=20200130185955');
+}
+
+.coffee-image.cappuccino {
+    background-image: 
+    url('https://static.wikia.nocookie.net/coffeetalk/images/d/db/Cappuccino.png/revision/latest?cb=20200130134833');
+}
+
+.coffee-image.latte {
+    background-image: 
+    url('https://static.wikia.nocookie.net/coffeetalk/images/b/b7/Caff%C3%A9_Latte.png/revision/latest?cb=20200130134445');
+}
+
+.coffee-image:hover {
+    transform: scale(1.05);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coffee-image-container {
+        width: 100%;
+        max-width: 200px; /* Tamaño máximo en móviles */
+    }
+
+    .coffee-image {
+        margin-top: 10px;
+    }
+}
+
+.coffee-image:hover {
+    transform: scale(1.05);
+}
+
+.menu-toggle:checked ~ .menu-content,
+.menu-item:hover .menu-content {
+    max-height: 300px;
+}
+
+.menu-item:hover .menu-title,
+.menu-toggle:checked ~ .menu-title {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+        margin-top: 40px;
+    }
+
+    .menu {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coffee-image {
+        width: 100%;
+        max-width: 200px;
+        margin-top: 10px;
+    }
+
+    .logo {
+        padding-top: 30px;
+        max-width: 100px;
+    }
+}
